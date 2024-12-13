@@ -3,18 +3,19 @@
 ## Формулировка задачи
 
 ### Уравнение теплопроводности:
-$\frac{\partial^2 u}{\partial x^2}$
 
-Тут описать про нашу задачу ... На Ане
+\[
+\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}, \quad x \in (0, L), \quad t > 0
+\]
 
-• Импуль Нестерова (optim.SGD)  
-Определяет скорость затухания накапливаемых элементов.
+### Начальные и граничные условия:
 
-• RMSprop — Running Mean Square (optim.RMSprop)  
-SGD + RMSprop
+\[
+\begin{cases}
+u(x, 0) = f(x), & x \in [0, L] \\
+u(0, t) = u(L, t) = 0, & t > 0
+\end{cases}
+\]
 
-• Adam — Adaptive Momentum (optim.Adam)  
-SGD + Adam
-
-• L-BFGS  
-...
+### Задача:
+Реализовать PINN метод решения начально-краевой задачи для уравнения теплопроводности. Сравнить эффективность различных оптимизаторов (SGD, Adam, RMSprop, L-BFGS).
